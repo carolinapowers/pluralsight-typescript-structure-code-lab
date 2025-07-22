@@ -1,5 +1,5 @@
-import { User, ApiResponse, PaginatedResponse } from '../types/api'
-import { apiConfig, endpoints } from '../config/api'
+import { User, ApiResponse, PaginatedResponse } from '../types'
+import { apiConfig, endpoints } from '../config'
 import { isValidEmail, DEFAULT_PAGE_SIZE } from '../utils'
 
 export class UserService {

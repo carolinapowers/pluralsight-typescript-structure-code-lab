@@ -1,6 +1,6 @@
-import { Product } from '../types/api'
+import { Product } from '../types'
 import { formatCurrency, capitalize } from '../utils'
-import { ProductService } from '../services/productService'
+import { ProductService } from '../services'
 
 export class ProductCard {
   private product: Product

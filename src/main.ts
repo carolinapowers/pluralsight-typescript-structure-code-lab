@@ -1,8 +1,6 @@
-import { UserService } from './services/userService'
-import { ProductService } from './services/productService'
-import { UserCard } from './components/UserCard'
-import { ProductCard } from './components/ProductCard'
-import { User, Product } from './types/api'
+import { UserService, ProductService } from './services'
+import { UserCard, ProductCard } from './components'
+import { User, Product } from './types'
 import { isValidEmail, isValidPassword, formatCurrency, formatDate, API_BASE_URL, DEFAULT_PAGE_SIZE, USER_ROLES } from './utils'
 
 class App {

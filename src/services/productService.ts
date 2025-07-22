@@ -1,5 +1,5 @@
-import { Product, ApiResponse, PaginatedResponse } from '../types/api'
-import { apiConfig, endpoints } from '../config/api'
+import { Product, ApiResponse, PaginatedResponse } from '../types'
+import { apiConfig, endpoints } from '../config'
 import { formatCurrency, DEFAULT_PAGE_SIZE } from '../utils'
 
 export class ProductService {

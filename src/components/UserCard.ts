@@ -1,4 +1,4 @@
-import { User } from '../types/api'
+import { User } from '../types'
 import { formatDate, capitalize, USER_ROLES } from '../utils'
 
 export class UserCard {
