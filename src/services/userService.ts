@@ -1,6 +1,7 @@
-import { User, ApiResponse, PaginatedResponse } from '../types'
-import { apiConfig, endpoints } from '../config'
-import { isValidEmail, DEFAULT_PAGE_SIZE } from '../utils'
+import { User, ApiResponse, PaginatedResponse } from '../types/api'
+import { apiConfig, endpoints } from '../config/api'
+import { isValidEmail } from '../utils/validators'
+import { DEFAULT_PAGE_SIZE } from '../utils/constants'
 
 export class UserService {
   async getUsers(page = 1, limit = DEFAULT_PAGE_SIZE): Promise<PaginatedResponse<User>> {

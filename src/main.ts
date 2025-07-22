@@ -1,17 +1,11 @@
-import { 
-  UserService, 
-  ProductService, 
-  UserCard, 
-  ProductCard,
-  User, 
-  Product,
-  isValidEmail,
-  formatCurrency, 
-  formatDate,
-  API_BASE_URL, 
-  DEFAULT_PAGE_SIZE 
-} from './index'
-import { isValidPassword } from './utils'
+import { UserService } from './services/userService'
+import { ProductService } from './services/productService'
+import { UserCard } from './components/UserCard'
+import { ProductCard } from './components/ProductCard'
+import { User, Product } from './types/api'
+import { isValidEmail, isValidPassword } from './utils/validators'
+import { formatCurrency, formatDate } from './utils/formatters'
+import { API_BASE_URL, DEFAULT_PAGE_SIZE, USER_ROLES } from './utils/constants'
 
 class App {
   private userService: UserService
