@@ -1,7 +1,17 @@
-import { UserService, ProductService } from './services'
-import { UserCard, ProductCard } from './components'
-import { User, Product } from './types'
-import { isValidEmail, isValidPassword, formatCurrency, formatDate, API_BASE_URL, DEFAULT_PAGE_SIZE, USER_ROLES } from './utils'
+import { 
+  UserService, 
+  ProductService, 
+  UserCard, 
+  ProductCard,
+  User, 
+  Product,
+  isValidEmail,
+  formatCurrency, 
+  formatDate,
+  API_BASE_URL, 
+  DEFAULT_PAGE_SIZE 
+} from './index'
+import { isValidPassword } from './utils'
 
 class App {
   private userService: UserService
