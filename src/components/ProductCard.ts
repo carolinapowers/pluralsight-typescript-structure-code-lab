@@ -1,5 +1,5 @@
 import { Product } from '../types/api'
-import { formatCurrency, capitalize } from '../utils/formatters'
+import { formatCurrency, capitalize } from '../utils'
 import { ProductService } from '../services/productService'
 
 export class ProductCard {

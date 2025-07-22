@@ -1,6 +1,5 @@
 import { User } from '../types/api'
-import { formatDate, capitalize } from '../utils/formatters'
-import { USER_ROLES } from '../utils/constants'
+import { formatDate, capitalize, USER_ROLES } from '../utils'
 
 export class UserCard {
   private user: User

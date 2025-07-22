@@ -1,7 +1,6 @@
 import { Product, ApiResponse, PaginatedResponse } from '../types/api'
 import { apiConfig, endpoints } from '../config/api'
-import { formatCurrency } from '../utils/formatters'
-import { DEFAULT_PAGE_SIZE } from '../utils/constants'
+import { formatCurrency, DEFAULT_PAGE_SIZE } from '../utils'
 
 export class ProductService {
   async getProducts(page = 1, limit = DEFAULT_PAGE_SIZE): Promise<PaginatedResponse<Product>> {
