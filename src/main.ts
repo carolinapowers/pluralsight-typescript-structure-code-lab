@@ -15,18 +15,39 @@ class App {
   }
 
   async init() {
-    console.log(`Initializing app with API: ${API_BASE_URL}`)
-    console.log(`Default page size: ${DEFAULT_PAGE_SIZE}`)
+    console.log(`🚀 TypeScript Barrel Files Demo - STEP 2: Basic Barrel`)
+    console.log(`📁 Initializing app with API: ${API_BASE_URL}`)
+    console.log(`📊 Default page size: ${DEFAULT_PAGE_SIZE}`)
+    console.log(`✅ Notice: Utils now imported from single barrel file!`)
+    console.log(`📈 Improvement: 3 utils imports → 1 barrel import`)
+    console.log(``)
     
-    try {
-      const users = await this.userService.getUsers()
-      const products = await this.productService.getProducts()
+    // Create mock data for demo purposes
+    const mockUsers: User[] = [
+      { id: 1, name: 'John Doe', email: 'john@example.com', role: 'admin' },
+      { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'user' }
+    ]
+    
+    const mockProducts: Product[] = [
+      { id: 1, name: 'TypeScript Course', price: 49.99, category: 'education', inStock: true },
+      { id: 2, name: 'Vite Handbook', price: 29.99, category: 'books', inStock: false }
+    ]
 
-      this.renderUsers(users.data)
-      this.renderProducts(products.data)
-    } catch (error) {
-      console.error('Failed to initialize app:', error)
-    }
+    console.log('👥 Demo Users:')
+    this.renderUsers(mockUsers)
+    console.log('')
+    console.log('📦 Demo Products:')
+    this.renderProducts(mockProducts)
+    console.log('')
+    
+    // Demonstrate utility functions from barrel import
+    console.log('🛠️ Utility Functions Demo (via barrel):')
+    console.log(`💰 Formatted price: ${formatCurrency(99.99)}`)
+    console.log(`📅 Formatted date: ${formatDate(new Date())}`)
+    console.log(`✅ Email validation: ${isValidEmail('test@example.com')}`)
+    console.log('')
+    console.log('🎯 STEP 2: Basic barrel - utils consolidated!')
+    console.log('➡️ Next: git checkout step-3 for more barrel files')
   }
 
   private renderUsers(users: User[]) {
