@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:analyze": "vite build --config bundle-analyzer.config.js",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:exports": "vitest run src/__tests__/barrel-exports.test.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
