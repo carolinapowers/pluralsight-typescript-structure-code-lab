@@ -1,27 +1,49 @@
 /**
- * Utils barrel file - Utility functions and constants
+ * Utils barrel file - STEP 5: Advanced optimizations with selective exports
  * 
- * Consolidates formatters, validators, and constants into a single import point.
- * This was the first barrel file created in the learning progression (Step 2).
+ * Step 5 optimizations implemented:
+ * - Selective re-exports instead of export * for better tree-shaking
+ * - Namespace grouping for better organization
+ * - Type-only exports where applicable
  * 
- * @example Basic usage
+ * @example Selective imports (optimized)
  * import { formatCurrency, isValidEmail, API_BASE_URL } from './utils'
  * 
- * @example Validation chain
- * import { isValidEmail, isValidPassword } from './utils'
- * const isValid = isValidEmail(email) && isValidPassword(password)
+ * @example Namespace imports (new in Step 5)
+ * import { Formatters, Validators } from './utils'
+ * const price = Formatters.formatCurrency(100)
+ * const isValid = Validators.isValidEmail(email)
  * 
  * @benefits
- * - Consolidates 3 utility modules into 1 import
- * - Provides consistent access to formatting, validation, and constants
- * - Simplifies refactoring and maintenance
+ * - Better tree-shaking and bundle optimization
+ * - Improved IDE IntelliSense and autocomplete
+ * - Clear dependency tracking
+ * - Enhanced maintainability
  */
 
-// Re-export constants
-export * from './constants'
+// Step 5: Selective re-exports for better tree-shaking
+export { 
+  formatCurrency, 
+  formatDate, 
+  capitalize 
+} from './formatters'
 
-// Re-export formatters
-export * from './formatters'
+export { 
+  isValidEmail, 
+  isValidPassword, 
+  isNotEmpty 
+} from './validators'
 
-// Re-export validators  
-export * from './validators'
+export { 
+  API_BASE_URL, 
+  API_VERSION,
+  DEFAULT_PAGE_SIZE, 
+  MAX_RETRY_ATTEMPTS,
+  HTTP_STATUS,
+  USER_ROLES 
+} from './constants'
+
+// Step 5: Namespace grouping for better organization
+export * as Formatters from './formatters'
+export * as Validators from './validators'
+export * as Constants from './constants'

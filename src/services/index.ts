@@ -1,24 +1,35 @@
 /**
- * Services barrel file - Business logic and API services
+ * Services barrel file - STEP 5: Advanced optimizations with selective exports
  * 
- * Consolidates all service classes for user and product operations.
- * Created in Step 3 of the barrel file learning progression.
+ * Step 5 optimizations implemented:
+ * - Selective class exports instead of export *
+ * - Namespace grouping for service organization
+ * - Clear separation of service classes and utilities
  * 
- * @example Import specific services
+ * @example Selective imports (optimized)
  * import { UserService, ProductService } from './services'
  * 
- * @example Instantiate services
- * import { UserService } from './services'
- * const userService = new UserService()
+ * @example Namespace imports (new in Step 5)
+ * import { Services } from './services'
+ * const userService = new Services.UserService()
+ * const productService = new Services.ProductService()
  * 
  * @benefits
- * - Centralizes all business logic services
- * - Simplifies service instantiation and dependency injection
- * - Enables consistent service imports across components
+ * - Better tree-shaking for service classes
+ * - Improved IDE IntelliSense and navigation
+ * - Clear dependency tracking for service imports
+ * - Enhanced maintainability and refactoring
  */
 
-// Re-export user service
-export * from './userService'
+// Step 5: Selective re-exports for better tree-shaking
+export { UserService } from './userService'
+export { ProductService } from './productService'
 
-// Re-export product service
-export * from './productService'
+// Step 5: Create unified Services namespace for alternative import style
+import { UserService } from './userService'
+import { ProductService } from './productService'
+
+export const Services = {
+  UserService,
+  ProductService
+} as const
