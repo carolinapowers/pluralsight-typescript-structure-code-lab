@@ -17,32 +17,9 @@ export * as components from './components'
 // Re-export all config with namespace
 export * as config from './config'
 
-// Direct exports for most commonly used items
-export { 
-  // Types
-  User, 
-  Product, 
-  ApiResponse, 
-  PaginatedResponse 
-} from './types'
-
-export {
-  // Services
-  UserService,
-  ProductService
-} from './services'
-
-export {
-  // Components
-  UserCard,
-  ProductCard
-} from './components'
-
-export {
-  // Most common utilities
-  formatCurrency,
-  formatDate,
-  isValidEmail,
-  API_BASE_URL,
-  DEFAULT_PAGE_SIZE
-} from './utils'
+// Direct re-exports from individual barrel files
+export * from './types'
+export * from './services' 
+export * from './components'
+export * from './utils'
+export * from './config'
