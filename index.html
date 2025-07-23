@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Barrel Files Code Lab</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            background: #f8fafc;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .step {
+            background: white;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+        .output {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            margin: 1rem 0;
+            white-space: pre-wrap;
+        }
+        .branch-nav {
+            background: #3b82f6;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .branch-nav h3 {
+            margin-top: 0;
+        }
+        code {
+            background: #e2e8f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 TypeScript Barrel Files Code Lab</h1>
+        <p>Learning to structure TypeScript applications using barrel files and module re-exports</p>
+    </div>
+
+    <div class="branch-nav">
+        <h3>🌳 Learning Path</h3>
+        <p>Navigate through each step to see the evolution:</p>
+        <ul>
+            <li><code>git checkout step-1</code> - Messy imports (8 statements)</li>
+            <li><code>git checkout step-2</code> - Basic barrel file (6 statements)</li>
+            <li><code>git checkout step-3</code> - Multiple barrels (4 statements)</li>
+            <li><code>git checkout step-4</code> - Complete implementation (2 statements)</li>
+            <li><code>git checkout solution</code> - Final clean code</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>📚 What You'll Learn</h3>
+        <ul>
+            <li>Create index files to group and export TypeScript modules</li>
+            <li>Re-export constants, classes, and functions for simplified access</li>
+            <li>Organize project structure using barrel patterns for scalability</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>🚀 Application Output</h3>
+        <p>The console below shows the TypeScript application running with the current branch's import structure:</p>
+        <div id="output" class="output">Loading TypeScript application...</div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+        // Capture console output and display it
+        const outputDiv = document.getElementById('output');
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            outputDiv.innerHTML += args.join(' ') + '\n';
+            originalLog.apply(console, args);
+        };
+        
+        console.error = function(...args) {
+            outputDiv.innerHTML += 'ERROR: ' + args.join(' ') + '\n';
+            originalError.apply(console, args);
+        };
+        
+        // Clear output initially
+        setTimeout(() => {
+            outputDiv.innerHTML = '';
+        }, 100);
+    </script>
+</body>
+</html>
