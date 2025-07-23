@@ -13,18 +13,40 @@ class App {
   }
 
   async init() {
-    console.log(`Initializing app with API: ${API_BASE_URL}`)
-    console.log(`Default page size: ${DEFAULT_PAGE_SIZE}`)
+    console.log(`🚀 TypeScript Barrel Files Demo - STEP 3: Multiple Barrels`)
+    console.log(`📁 Initializing app with API: ${API_BASE_URL}`)
+    console.log(`📊 Default page size: ${DEFAULT_PAGE_SIZE}`)
+    console.log(`✅ Notice: Multiple barrel files working together!`)
+    console.log(`📈 Improvement: 8 imports → 4 barrel imports`)
+    console.log(`🎯 Types, Services, Components & Utils all using barrels`)
+    console.log(``)
     
-    try {
-      const users = await this.userService.getUsers()
-      const products = await this.productService.getProducts()
+    // Create mock data for demo purposes
+    const mockUsers: User[] = [
+      { id: 1, name: 'John Doe', email: 'john@example.com', role: 'admin' },
+      { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'user' }
+    ]
+    
+    const mockProducts: Product[] = [
+      { id: 1, name: 'TypeScript Course', price: 49.99, category: 'education', inStock: true },
+      { id: 2, name: 'Vite Handbook', price: 29.99, category: 'books', inStock: false }
+    ]
 
-      this.renderUsers(users.data)
-      this.renderProducts(products.data)
-    } catch (error) {
-      console.error('Failed to initialize app:', error)
-    }
+    console.log('👥 Demo Users (via barrel imports):')
+    this.renderUsers(mockUsers)
+    console.log('')
+    console.log('📦 Demo Products (via barrel imports):')
+    this.renderProducts(mockProducts)
+    console.log('')
+    
+    // Demonstrate utility functions from barrel import
+    console.log('🛠️ Utility Functions Demo (all via barrels):')
+    console.log(`💰 Formatted price: ${formatCurrency(99.99)}`)
+    console.log(`📅 Formatted date: ${formatDate(new Date())}`)
+    console.log(`✅ Email validation: ${isValidEmail('test@example.com')}`)
+    console.log('')
+    console.log('🎯 STEP 3: Multiple barrels - major simplification!')
+    console.log('➡️ Next: git checkout step-4 for complete implementation')
   }
 
   private renderUsers(users: User[]) {
